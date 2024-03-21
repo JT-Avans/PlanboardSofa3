@@ -9,12 +9,10 @@ namespace Core.Domain
     public class Column
     {
         public string Name { get; set; }
-        public int MaxTickets { get; set; }
         public List<ITicket> Tickets { get; set; }
 
-        public Column(string name, int maxTickets) {
+        public Column(string name) {
             this.Name = name;
-            this.MaxTickets = maxTickets;
             this.Tickets = new List<ITicket>();
         }
 

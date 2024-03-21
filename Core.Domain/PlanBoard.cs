@@ -11,7 +11,13 @@ namespace Core.Domain
         public List<Column> Columns { get; set; }
 
         public PlanBoard() { 
-            this.Columns = new List<Column>();
+            this.Columns = new List<Column> {
+                new Column("Todo"),
+                new Column("Doing"),
+                new Column("ReadyForTesting"),
+                new Column("Testing"),
+                new Column("Done")
+            };
         }
 
         public void addColumns(Column column)
