@@ -12,7 +12,7 @@ namespace Core.Domain
         public string Title { get; set; }
         public string Description { get; set; }
         public int Priority { get; set; }
-        public List<User> Assignees { get; set; }
+        public User? Assignees { get; set; }
         public int Severity {  get; set; }
         public ITicketState State { get; set; }
 
@@ -23,7 +23,6 @@ namespace Core.Domain
             Description = description;
             Priority = priority;
             Severity = severity;
-            Assignees = new List<User>();
             State = new OpenTicketState();
         }
 
@@ -37,9 +36,9 @@ namespace Core.Domain
             this.State.assignAssignee(this, assignee);
         }
 
-        public void removeAssignee(User assignee)
+        public void removeAssignee()
         {
-            this.State.removeAssignee(this, assignee);
+            this.State.removeAssignee(this);
         }
 
         public void setState(ITicketState state)

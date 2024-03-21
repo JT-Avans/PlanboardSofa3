@@ -10,12 +10,12 @@ namespace Core.Domain
     {
         public void assignAssignee(ITicket ticket, User assignee)
         {
-            ticket.Assignees.Add(assignee);
+            ticket.Assignees = assignee;
         }
 
-        public void removeAssignee(ITicket ticket, User assignee)
+        public void removeAssignee(ITicket ticket)
         {
-            ticket.Assignees.Remove(assignee);
+            ticket.Assignees = null;
         }
 
         public void updateSeverity(ITicket ticket, int severity)

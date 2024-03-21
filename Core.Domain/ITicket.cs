@@ -12,12 +12,12 @@ namespace Core.Domain
         string Title { get; set; }
         string Description { get; set; }
         int Priority { get; set; }
-        List<User> Assignees { get; set; }
+        User? Assignees { get; set; }
         ITicketState State { get; set; }
 
         void setState(ITicketState state);
         void assignAssignee(User assignee);
-        void removeAssignee(User assignee);
+        void removeAssignee();
 
     }
 }

@@ -10,6 +10,6 @@ namespace Core.Domain
     {
         void updateSeverity(ITicket ticket, int severity);
         void assignAssignee(ITicket ticket, User assignee);
-        void removeAssignee(ITicket ticket, User assignee);
+        void removeAssignee(ITicket ticket);
     }
 }
