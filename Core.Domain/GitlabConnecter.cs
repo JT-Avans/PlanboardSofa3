@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Core.Domain
 {
-    public class GithubConnector : GitConnector
+    public class GitlabConnecter : GitConnector
     {
         protected override void authenticate()
         {
-            Console.WriteLine("Connect to GITHUB");
+            Console.WriteLine("Connect to GITLAB");
         }
 
         protected override void getSourceCode()
         {
-            Console.WriteLine("Retrieve GITHUB code");
+            Console.WriteLine("Retrieve GITLAB code");
         }
     }
 }

@@ -12,9 +12,9 @@ namespace Core.Domain
         public string Title { get; set; }
         public string Description { get; set; }
         public int Priority { get; set; }
-        public User? Assignees { get; set; }
+        public User? Assignee { get; set; }
         public int Severity {  get; set; }
-        public ITicketState State { get; set; }
+        public List<TicketActivity> TicketActivities { get; set; }
 
         public BugTicket(int iD, string title, string description, int priority, int severity)
         {
@@ -23,27 +23,26 @@ namespace Core.Domain
             Description = description;
             Priority = priority;
             Severity = severity;
-            State = new OpenTicketState();
         }
 
         public void updateSeverity(int severity)
         {
-            this.State.updateSeverity(this, severity);
+            this.Severity = severity;
         }
 
         public void assignAssignee(User assignee)
         {
-            this.State.assignAssignee(this, assignee);
+            this.Assignee = assignee;
         }
 
         public void removeAssignee()
         {
-            this.State.removeAssignee(this);
+            this.Assignee = null;
         }
 
-        public void setState(ITicketState state)
+        public void addTicketActivity(TicketActivity ticketActivity)
         {
-            this.State = state;
+            this.TicketActivities.Add(ticketActivity);
         }
     }
 }

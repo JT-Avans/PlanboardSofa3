@@ -9,6 +9,7 @@ namespace Core.Domain
     public class PlanBoard
     {
         public List<Column> Columns { get; set; }
+        public Forum Forum { get; set; }
 
         public PlanBoard() { 
             this.Columns = new List<Column> {
@@ -18,6 +19,7 @@ namespace Core.Domain
                 new Column("Testing"),
                 new Column("Done")
             };
+            this.Forum = new Forum();
         }
 
         public void addColumns(Column column)
