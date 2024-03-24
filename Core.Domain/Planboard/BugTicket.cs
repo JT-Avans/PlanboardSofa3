@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Domain.Analysis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,11 @@ namespace Core.Domain.Planboard
             this.Priority = priority;
             this.Severity = severity;
             this.TicketActivities = new List<TicketActivity>();
+        }
+
+        public void accept(IExport exportVisitor)
+        {
+            exportVisitor.visitBugTicket(this);
         }
 
         public void updateSeverity(int severity)
