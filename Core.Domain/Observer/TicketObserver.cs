@@ -1,3 +1,5 @@
+using Core.Domain.Planboard;
+
 namespace Core.Domain.Observer;
 
 public class TicketObserver
@@ -17,5 +19,10 @@ public class TicketObserver
     public void Unsubscribe(IObserver observer)
     {
         observable.Detach(observer);
+    }
+    
+    public void Update(ITicket ticket)
+    {
+        Console.WriteLine($"Ticket updated: {ticket.Title}");
     }
 }
