@@ -12,8 +12,4 @@
     <None Remove="Report\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Observer\" />
-  </ItemGroup>
-
 </Project>

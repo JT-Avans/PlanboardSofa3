@@ -20,5 +20,7 @@ namespace Core.Domain.Planboard
 
         void addTicketActivity(TicketActivity ticketActivity);
 
+        bool MarkAsCompleted();
+
     }
 }
