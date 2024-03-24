@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Forums
 {
     public class Forum
     {
@@ -12,7 +12,7 @@ namespace Core.Domain
 
         public Forum()
         {
-            this.threads = new List<Thread>();
+            threads = new List<Thread>();
         }
 
         void addThread(Thread thread)

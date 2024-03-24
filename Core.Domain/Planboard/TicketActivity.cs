@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Planboard
 {
     public class TicketActivity
     {
@@ -14,9 +14,9 @@ namespace Core.Domain
 
         public TicketActivity(int id, string title, string description)
         {
-            this.ID = id;
-            this.Title = title;
-            this.Description = description;
+            ID = id;
+            Title = title;
+            Description = description;
         }
     }
 }

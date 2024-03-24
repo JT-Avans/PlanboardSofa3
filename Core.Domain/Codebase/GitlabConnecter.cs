@@ -4,18 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Codebase
 {
     public class GitlabConnecter : GitConnector
     {
         protected override void authenticate()
         {
-            Console.WriteLine("Connect to GITLAB");
+            throw new NotImplementedException();
+        }
+
+        protected override void formatSourceCode()
+        {
+            throw new NotImplementedException();
         }
 
         protected override void getSourceCode()
         {
-            Console.WriteLine("Retrieve GITLAB code");
+            throw new NotImplementedException();
         }
     }
 }

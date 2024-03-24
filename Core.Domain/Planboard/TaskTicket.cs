@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Planboard
 {
     public class TaskTicket : ITicket
     {
@@ -17,25 +17,26 @@ namespace Core.Domain
 
         public TaskTicket(int id, string title, string description, int priority)
         {
-            ID = id;
-            Title = title;
-            Description = description;
-            Priority = priority;
+            this.ID = id;
+            this.Title = title;
+            this.Description = description;
+            this.Priority = priority;
+            this.TicketActivities = new List<TicketActivity>();
         }
 
         public void assignAssignee(User assignee)
         {
-            this.Assignee = assignee;
+            Assignee = assignee;
         }
 
         public void removeAssignee()
         {
-            this.Assignee = null;
+            Assignee = null;
         }
 
         public void addTicketActivity(TicketActivity ticketActivity)
         {
-            this.TicketActivities.Add(ticketActivity);
+            TicketActivities.Add(ticketActivity);
         }
     }
 }

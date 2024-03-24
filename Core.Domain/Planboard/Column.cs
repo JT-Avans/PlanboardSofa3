@@ -4,26 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Planboard
 {
     public class Column
     {
         public string Name { get; set; }
         public List<ITicket> Tickets { get; set; }
 
-        public Column(string name) {
-            this.Name = name;
-            this.Tickets = new List<ITicket>();
+        public Column(string name)
+        {
+            Name = name;
+            Tickets = new List<ITicket>();
         }
 
         public void addTicket(ITicket ticket)
         {
-            this.Tickets.Add(ticket);
+            Tickets.Add(ticket);
         }
 
         public void removeTicket(ITicket ticket)
         {
-            this.Tickets.Remove(ticket);
+            Tickets.Remove(ticket);
         }
 
     }

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Domain.Planboard;
 
-namespace Core.Domain
+namespace Core.Domain.Forums
 {
     public class Thread
     {
@@ -13,7 +14,7 @@ namespace Core.Domain
 
         public Thread(ITicket ticket)
         {
-            this.Ticket = ticket;
+            Ticket = ticket;
             Messages = new List<Messages>();
         }
 

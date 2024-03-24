@@ -4,18 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Codebase
 {
     public class GithubConnector : GitConnector
     {
         protected override void authenticate()
         {
-            Console.WriteLine("Connect to GITHUB");
+            throw new NotImplementedException();
+        }
+
+        protected override void formatSourceCode()
+        {
+            throw new NotImplementedException();
         }
 
         protected override void getSourceCode()
         {
-            Console.WriteLine("Retrieve GITHUB code");
+            throw new NotImplementedException();
         }
     }
 }

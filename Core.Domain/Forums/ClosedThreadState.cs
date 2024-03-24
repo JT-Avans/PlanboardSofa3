@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Forums
 {
-    public interface IThreadState
+    public class ClosedThreadState : IThreadState
     {
     }
 }

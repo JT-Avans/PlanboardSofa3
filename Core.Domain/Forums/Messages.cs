@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Forums
 {
     public class Messages
     {
@@ -14,9 +14,9 @@ namespace Core.Domain
 
         public Messages(User user, string message)
         {
-            this.User = user;
-            this.Message = message;
-            this.DateTime = DateTime.Now;
+            User = user;
+            Message = message;
+            DateTime = DateTime.Now;
         }
     }
 }
