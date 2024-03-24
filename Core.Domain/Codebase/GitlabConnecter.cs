@@ -8,16 +8,16 @@ namespace Core.Domain.Codebase
 {
     public class GitlabConnecter : GitConnector
     {
-        protected override void authenticate()
+        public override void authenticate()
         {
             Console.WriteLine("Authenticate to Gitlab");
         }
-        protected override void getSourceCode()
+        public override void getSourceCode()
         {
             Console.WriteLine("GetSourceCode Gitlab");
         }
 
-        protected override void formatSourceCode()
+        public override void formatSourceCode()
         {
             Console.WriteLine("Format sourceCode Gitlab");
         }
