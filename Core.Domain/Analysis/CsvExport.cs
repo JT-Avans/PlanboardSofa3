@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Core.Domain.Analysis
 {
-    public class JsonExport : IExport
+    public class CsvExport : IExport
     {
         public void visitBugTicket(BugTicket bugTicket)
         {
-            Console.WriteLine("Export BugTickets to JSON");
+            Console.WriteLine("Export BugTickets to CSV");
         }
 
         public void visitTaskTicket(TaskTicket taskTicket)
         {
-            Console.WriteLine("Export BugTickets to CSV");
+            Console.WriteLine("Export TaskTicket to CSV");
         }
     }
 }
