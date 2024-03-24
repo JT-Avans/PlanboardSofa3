@@ -18,7 +18,7 @@ namespace Core.Domain.ThirdPartyService
 
         public void sendEmailAdapter(Report report)
         {
-            service.sendEmail(report);
+            service.SendEmail(report);
         }
     }
 }
