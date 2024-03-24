@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Domain.Analysis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,11 @@ namespace Core.Domain.Planboard
             this.Description = description;
             this.Priority = priority;
             this.TicketActivities = new List<TicketActivity>();
+        }
+
+        public void accept(IExport exportVisitor)
+        {
+            exportVisitor.visitTaskTicket(this);
         }
 
         public void assignAssignee(User assignee)
