@@ -10,12 +10,22 @@ namespace Core.Domain.Forums
     public class Thread
     {
         public ITicket Ticket;
-        public List<Messages> Messages;
+        public List<Message> Messages;
+        public IThreadState ThreadState;
 
         public Thread(ITicket ticket)
         {
             Ticket = ticket;
-            Messages = new List<Messages>();
+            Messages = new List<Message>();
+            ThreadState = new OpenThreadState(this);
+        }
+        public void changeState(IThreadState state)
+        {
+            ThreadState = state;
+        }
+        public void AddMessage(Message message)
+        {
+            this.ThreadState.addMessage(message);
         }
 
     }

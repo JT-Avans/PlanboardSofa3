@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Core.Domain.Forums
 {
-    public class Messages
+    public class Message
     {
         public User User { get; set; }
-        public string Message { get; set; }
+        public string Text { get; set; }
         public DateTime DateTime { get; set; }
 
-        public Messages(User user, string message)
+        public Message(User user, string text)
         {
             User = user;
-            Message = message;
+            Text = text;
             DateTime = DateTime.Now;
         }
     }

@@ -10,17 +10,16 @@ namespace Core.Domain.Codebase
     {
         protected override void authenticate()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Authenticate to Github");
+        }
+        protected override void getSourceCode()
+        {
+            Console.WriteLine("GetSourceCode Github");
         }
 
         protected override void formatSourceCode()
         {
-            throw new NotImplementedException();
-        }
-
-        protected override void getSourceCode()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("Format sourceCode Github");
         }
     }
 }

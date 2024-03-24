@@ -8,5 +8,13 @@ namespace Core.Domain.Forums
 {
     public class ClosedThreadState : IThreadState
     {
+        public ClosedThreadState(Thread thread) : base(thread)
+        {
+        }
+
+        public override void addMessage(Message message)
+        {
+            //locked
+        }
     }
 }

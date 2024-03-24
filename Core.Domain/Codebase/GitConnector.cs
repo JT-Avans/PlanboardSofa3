@@ -9,7 +9,7 @@ namespace Core.Domain.Codebase
 {
     public abstract class GitConnector
     {
-        public void issueConverter()
+        public void SourceCode()
         {
             authenticate();
             getSourceCode();

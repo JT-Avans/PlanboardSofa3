@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Core.Domain.Forums
 {
-    public interface IThreadState
+    public abstract class IThreadState
     {
+        protected Thread Thread { get; set; }
+        protected IThreadState(Thread thread)
+        {
+            this.Thread = thread;
+        }
+        public abstract void addMessage(Message message);
+
     }
 }

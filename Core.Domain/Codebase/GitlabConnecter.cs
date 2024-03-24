@@ -10,17 +10,16 @@ namespace Core.Domain.Codebase
     {
         protected override void authenticate()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Authenticate to Gitlab");
+        }
+        protected override void getSourceCode()
+        {
+            Console.WriteLine("GetSourceCode Gitlab");
         }
 
         protected override void formatSourceCode()
         {
-            throw new NotImplementedException();
-        }
-
-        protected override void getSourceCode()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("Format sourceCode Gitlab");
         }
     }
 }
