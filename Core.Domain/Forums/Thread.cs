@@ -27,6 +27,18 @@ namespace Core.Domain.Forums
         {
             this.ThreadState.addMessage(message);
         }
+        
+        public void TicketCompletionStatusChanged()
+        {
+            if (Ticket.MarkAsCompleted())
+            {
+                changeState(new ClosedThreadState(this));
+            }
+            else
+            {
+                changeState(new OpenThreadState(this));
+            }
+        }
 
     }
 }
