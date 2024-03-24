@@ -21,48 +21,60 @@ namespace UnitTests
         public void Authenticate_ShouldWriteAuthenticateToGithubToConsole()
         {
             var githubConnector = new GithubConnector();
-            var consoleOutput = new StringWriter();
+            using StringWriter consoleOutput = new();
             Console.SetOut(consoleOutput);
 
             githubConnector.authenticate();
 
             Assert.Equal("Authenticate to Github\r\n", consoleOutput.ToString());
+            
+            // Reset the console output
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         }
 
         [Fact]
         public void GetSourceCode_ShouldWriteGetSourceCodeGithubToConsole()
         {
             var githubConnector = new GithubConnector();
-            var consoleOutput = new StringWriter();
+            using StringWriter consoleOutput = new();
             Console.SetOut(consoleOutput);
 
             githubConnector.getSourceCode();
 
             Assert.Equal("GetSourceCode Github\r\n", consoleOutput.ToString());
+            // Reset the console output
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         }
 
         [Fact]
         public void FormatSourceCode_ShouldWriteFormatSourceCodeGithubToConsole()
         {
             var githubConnector = new GithubConnector();
-            var consoleOutput = new StringWriter();
+            using StringWriter consoleOutput = new();
             Console.SetOut(consoleOutput);
 
             githubConnector.formatSourceCode();
 
             Assert.Equal("Format sourceCode Github\r\n", consoleOutput.ToString());
+            
+            // Reset the console output
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         }
         
         [Fact]
         public void Authenticate_ShouldWriteAuthenticateToGitlabToConsole()
         {
             var gitlabConnector = new GitlabConnecter();
-            var consoleOutput = new StringWriter();
+            using StringWriter consoleOutput = new();
             Console.SetOut(consoleOutput);
 
             gitlabConnector.authenticate();
 
+            
             Assert.Equal("Authenticate to Gitlab\r\n", consoleOutput.ToString());
+            
+            // Reset the console output
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         }
 
         [Fact]
@@ -75,6 +87,9 @@ namespace UnitTests
             gitlabConnector.getSourceCode();
 
             Assert.Equal("GetSourceCode Gitlab\r\n", consoleOutput.ToString());
+            
+            // Reset the console output
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         }
 
         [Fact]
@@ -87,6 +102,9 @@ namespace UnitTests
             gitlabConnector.formatSourceCode();
 
             Assert.Equal("Format sourceCode Gitlab\r\n", consoleOutput.ToString());
+            
+            // Reset the console output
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         }
     }
 }

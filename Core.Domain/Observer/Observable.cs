@@ -4,7 +4,7 @@ namespace Core.Domain.Observer;
 
 public class Observable
 {
-    private List<IObserver> observers = new List<IObserver>();
+    readonly List<IObserver> observers = new List<IObserver>();
 
     public void Attach(IObserver observer)
     {

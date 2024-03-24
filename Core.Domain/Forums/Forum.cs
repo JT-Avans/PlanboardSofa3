@@ -8,14 +8,14 @@ namespace Core.Domain.Forums
 {
     public class Forum
     {
-        List<Thread> threads;
+        readonly List<Thread> threads;
 
         public Forum()
         {
             threads = new List<Thread>();
         }
 
-        void addThread(Thread thread)
+        public void addThread(Thread thread)
         {
             threads.Add(thread);
         }

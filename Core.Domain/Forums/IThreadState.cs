@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Core.Domain.Forums
 {
-    public abstract class IThreadState
+    public abstract class ThreadState
     {
         protected Thread Thread { get; set; }
-        protected IThreadState(Thread thread)
+        protected ThreadState(Thread thread)
         {
             this.Thread = thread;
         }

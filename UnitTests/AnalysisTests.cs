@@ -22,12 +22,15 @@ public class AnalysisTests
     {
         var jsonExport = new JsonExport();
         var bugTicket = new BugTicket(123, "description", "reporter", 123, 123);
-        var consoleOutput = new StringWriter();
+        using StringWriter consoleOutput = new();
         Console.SetOut(consoleOutput);
 
         jsonExport.visitBugTicket(bugTicket);
 
         Assert.Equal("Export BugTickets to JSON\r\n", consoleOutput.ToString());
+        
+        // Reset the console output
+        Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
     }
 
     [Fact]
@@ -35,12 +38,16 @@ public class AnalysisTests
     {
         var jsonExport = new JsonExport();
         var taskTicket = new TaskTicket(123, "title", "title", 123);
-        var consoleOutput = new StringWriter();
+        using StringWriter consoleOutput = new();
         Console.SetOut(consoleOutput);
 
         jsonExport.visitTaskTicket(taskTicket);
-
+        // Reset the console output
+        Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
+        
         Assert.Equal("Export BugTickets to CSV\r\n", consoleOutput.ToString());
+        
+
     }
     
     [Fact]
@@ -76,6 +83,9 @@ public class AnalysisTests
         csvExport.visitBugTicket(bugTicket);
 
         Assert.Equal("Export BugTickets to CSV\r\n", consoleOutput.ToString());
+            
+        // Reset the console output
+        Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
     }
 
     [Fact]
@@ -89,5 +99,8 @@ public class AnalysisTests
         csvExport.visitTaskTicket(taskTicket);
 
         Assert.Equal("Export TaskTicket to CSV\r\n", consoleOutput.ToString());
+        
+        // Reset the console output
+        Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
     }
 }

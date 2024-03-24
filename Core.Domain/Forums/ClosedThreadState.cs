@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Domain.Forums
 {
-    public class ClosedThreadState : IThreadState
+    public class ClosedThreadState : ThreadState
     {
         public ClosedThreadState(Thread thread) : base(thread)
         {

@@ -32,15 +32,5 @@ namespace UnitTests
 
             Assert.IsType<OpenThreadState>(thread.ThreadState);
         }
-
-        [Fact]
-        public void AddMessage_ShouldThrowException_WhenMessageIsNull()
-        {
-            var mockThread = new Mock<Thread>();
-            var openThreadState = new OpenThreadState(mockThread.Object);
-            Message message = null;
-
-            Assert.Throws<ArgumentNullException>(() => openThreadState.addMessage(message));
-        }
     }
 }

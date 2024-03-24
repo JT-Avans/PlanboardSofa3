@@ -5,19 +5,20 @@ namespace UnitTests
     public class PipelineTests
     {
         [Fact]
-        public void DevopPipeline_ShouldWriteToConsole()
+        public void DevopPipeline_ShouldPrintExpectedMessages()
         {
-            // Arrange
             var pipeline = new Pipeline();
-            var expectedOutput = "Retrieve source\r\nInstall packages\r\nBuilding\r\nRun tests\r\nDeploy\r\n";
-            var consoleOutput = new StringWriter();
+            using StringWriter consoleOutput = new();
             Console.SetOut(consoleOutput);
 
-            // Act
             pipeline.DevopPipeline();
 
-            // Assert
+            var expectedOutput = string.Join(Environment.NewLine, "Retrieve source", "Install packages", "Building", "Run tests", "Deploy") + Environment.NewLine;
             Assert.Equal(expectedOutput, consoleOutput.ToString());
+            
+            // Reset the console output
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
+        }
         }
     }
-}
+

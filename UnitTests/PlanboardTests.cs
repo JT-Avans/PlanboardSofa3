@@ -1,3 +1,6 @@
+using Core.Domain;
+using Core.Domain.Analysis;
+using Core.Domain.Observer;
 using Core.Domain.Planboard;
 
 using Moq;
@@ -118,5 +121,16 @@ namespace UnitTests
 
             Assert.True(bugTicket.IsCompleted);
         }
+        
+        [Fact]
+public void Accept_ShouldInvokeCorrectMethodOnExport()
+{
+    var mockExport = new Mock<IExport>();
+    var taskTicket = new TaskTicket(1, "title", "description", 1);
+
+    taskTicket.accept(mockExport.Object);
+
+    mockExport.Verify(e => e.visitTaskTicket(taskTicket), Times.Once);
+}
     }
 }

@@ -11,7 +11,7 @@ namespace Core.Domain.Forums
     {
         public ITicket Ticket;
         public List<Message> Messages;
-        public IThreadState ThreadState;
+        public ThreadState ThreadState;
 
         public Thread(ITicket ticket)
         {
@@ -19,7 +19,7 @@ namespace Core.Domain.Forums
             Messages = new List<Message>();
             ThreadState = new OpenThreadState(this);
         }
-        public void changeState(IThreadState state)
+        public void changeState(ThreadState state)
         {
             ThreadState = state;
         }

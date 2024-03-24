@@ -4,7 +4,7 @@ namespace Core.Domain.Observer;
 
 public class TicketObserver
 {
-    private Observable observable;
+    readonly Observable observable;
 
     public TicketObserver(Observable observable)
     {
@@ -21,7 +21,7 @@ public class TicketObserver
         observable.Detach(observer);
     }
     
-    public void Update(ITicket ticket)
+    public static void Update(ITicket ticket)
     {
         Console.WriteLine($"Ticket updated: {ticket.Title}");
     }
