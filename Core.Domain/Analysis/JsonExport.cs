@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Domain.Analysis
 {
-    internal class BugTicketExport
+    internal class JsonExport
     {
     }
 }
