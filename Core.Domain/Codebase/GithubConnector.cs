@@ -8,16 +8,16 @@ namespace Core.Domain.Codebase
 {
     public class GithubConnector : GitConnector
     {
-        protected override void authenticate()
+        public override void authenticate()
         {
             Console.WriteLine("Authenticate to Github");
         }
-        protected override void getSourceCode()
+    public override void getSourceCode()
         {
             Console.WriteLine("GetSourceCode Github");
         }
 
-        protected override void formatSourceCode()
+        public override void formatSourceCode()
         {
             Console.WriteLine("Format sourceCode Github");
         }

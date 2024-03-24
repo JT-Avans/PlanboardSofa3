@@ -16,8 +16,8 @@ namespace Core.Domain.Codebase
             formatSourceCode();
         }
 
-        protected abstract void authenticate();
-        protected abstract void getSourceCode();
-        protected abstract void formatSourceCode();
+        public abstract void authenticate();
+        public abstract void getSourceCode();
+        public abstract void formatSourceCode();
     }
 }
