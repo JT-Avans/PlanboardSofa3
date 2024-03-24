@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Report\" />
+    <Compile Remove="Report\**" />
+    <EmbeddedResource Remove="Report\**" />
+    <None Remove="Report\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Observer\" />
   </ItemGroup>
 
